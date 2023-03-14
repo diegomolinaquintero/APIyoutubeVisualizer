@@ -1,0 +1,58 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas de YouTube</title>
+</head>
+<body>
+    <h1>Estadísticas de YouTube</h1>
+    <ul>
+        <li>Título: {{ video.items.0.snippet.title }}</li>
+        <li>Descripción: {{ video.items.0.snippet.description }}</li>
+        <li>Visualizaciones: {{ video.items.0.statistics.viewCount }}</li>
+        <li>Me gusta: {{ video.items.0.statistics.likeCount }}</li>
+        <li>No me gusta: {{ video.items.0.statistics.dislikeCount }}</li>
+        <li>Comentarios: {{ video.items.0.statistics.commentCount }}</li>
+    </ul>
+    <p>
+        {{ video.items}}
+    </p>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas de YouTube</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">Estadísticas de YouTube</h1>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Título: {{ video.items.0.snippet.title }}</li>
+                            <li class="list-group-item">Descripción: {{ video.items.0.snippet.description }}</li>
+                            <li class="list-group-item">Visualizaciones: {{ video.items.0.statistics.viewCount }}</li>
+                            <li class="list-group-item">Me gusta: {{ video.items.0.statistics.likeCount }}</li>
+                            <li class="list-group-item">No me gusta: {{ video.items.0.statistics.dislikeCount }}</li>
+                            <li class="list-group-item">Comentarios: {{ video.items.0.statistics.commentCount }}</li>
+                        </ul>
+                    </div>
+                    <pre>
+                        {{ video.items | pprint }}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
